@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+body {
+  background-color: #a7d8ff;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  background-color: #1275bb;
+  border-radius: 0 0 3rem 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#navContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+#navContainer > a,
+p {
+  text-decoration: none;
+  color: white;
+  transition: color 0.4s;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#navContainer > a:hover {
+  color: #ff7f50;
+}
+
+#navContainer a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #ff7f50, #ffb6c1);
+  transition: width 0.4s ease;
+}
+
+#navContainer a:hover .bar {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(237, 237, 237, 0.9);
+  margin: 2rem;
+  border-radius: 3rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+#carousel {
+  display: flex;
+  gap: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#carousel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+
+.comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.comic-panel {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.game-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+footer {
+  background-color: #1275bb;
+  color: white;
+  padding: 1rem;
+  border-radius: 3rem 3rem 0 0;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .comic-grid, .games-grid {
+    grid-template-columns: 1fr;
+  }
+}
